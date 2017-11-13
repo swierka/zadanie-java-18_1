@@ -13,7 +13,7 @@ public class FilteringMachineTest {
 
     private FilteringMachine machine = new FilteringMachine();
 
-    @Test public void shouldFilterOutNotEvenNumbers() {
+    @Test public void shouldFilterOutEvenNumbers() {
 
         // given
         List<Integer> numberList = new ArrayList<>();
@@ -27,7 +27,7 @@ public class FilteringMachineTest {
         numberList.add(71);
 
         // when
-        List<Integer> filteredList = machine.filterOutNotEvenNumbers(numberList);
+        List<Integer> filteredList = machine.filterOutEvenNumbers(numberList);
 
         // then
         assertThat(filteredList.size(), is(2));
@@ -35,7 +35,7 @@ public class FilteringMachineTest {
         assertThat(filteredList, hasItem(124));
     }
 
-    @Test public void shouldFilterOutNumberLowerThan20() {
+    @Test public void shouldFilterOutNumberHigherThan20() {
 
         // given
         List<Integer> numberList = new ArrayList<>();
@@ -49,7 +49,7 @@ public class FilteringMachineTest {
         numberList.add(71);
 
         // when
-        List<Integer> filteredList = machine.filterOutLowerNumbersThan20(numberList);
+        List<Integer> filteredList = machine.filterOutHigherNumbersThan20(numberList);
 
         // then
         assertThat(filteredList.size(), is(4));
